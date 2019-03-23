@@ -103,6 +103,9 @@ uint64_t leftRotate(uint64_t n, int d)
 	return (n << d) | (n >> (LONG_LONG_BITS - d));
 }
 
+
+
+///////////////////////CAAPIRE COME FARE HASH DEL SINGOLO E BASTA//////////
 //calcola la stringa complemento della stringa spaceSeed
 uint64_t hash_complemento(string spacedSeed,string sequenza_input)
 {
@@ -135,6 +138,6 @@ uint64_t hash_complemento(string spacedSeed,string sequenza_input)
 	}
 	
 	//calcolo l'hash della stringa complemento
-	uint64_t hash_complemento = ;
+	uint64_t hash_complemento = 4445;
 	return hash_complemento;
 }
