@@ -204,4 +204,4 @@ int preProcessing(string spacedSeedComp) {
 
 }
 
-reffrfeferfe
+//reffrfeferfe
