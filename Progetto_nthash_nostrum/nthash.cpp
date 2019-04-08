@@ -18,6 +18,7 @@ uint64_t hash_complemento(string spacedSeed, string sequenza_input);
 int preProcessing(string spacedSeed);
 uint64_t toInt(char seq);
 uint64_t leftRotate(uint64_t n, int d);
+string complementary(string spacedSeed);
 
 //fare una prova dei metodi fatti
 int main()
@@ -33,7 +34,8 @@ int main()
 	}
 
 	hash_complemento(spacedSeed,prova);
-	
+
+	cin.ignore();
 }
 
 //trova il primo hash, dalla posizione 0 a k-1
@@ -143,10 +145,33 @@ uint64_t hash_complemento(string spacedSeed,string sequenza_input)
 	return hash_complemento;
 }
 
-////preprocessing/////reer
+////finding the reduced complementary of the spaced seed
+string complementary(string spacedSeed) {
+	string comp;
+	for (int i = 0; i < spacedSeed.length(); i++) {
+		if (spacedSeed[i] == '0')
+			comp.push_back('1');
+		else
+			comp.push_back('0');
+	}
 
+	int i = 0;
+	int j = spacedSeed.length() - 1;
+	while (comp[i] == '0') {
+		i++;
+	}
+	while (comp[j] == '0') {
+		j--;
+	}
+	comp.erase(0, i);
+	comp.erase(j-(i-1), comp.length());
+	return comp;
+}
+
+////preprocessing////
 int preProcessing(string spacedSeed) {
-
 	
+		
+	return 0;
 
 }
