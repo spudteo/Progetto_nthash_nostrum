@@ -203,3 +203,5 @@ int preProcessing(string spacedSeedComp) {
 	return pos;
 
 }
+
+reffrfeferfe
