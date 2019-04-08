@@ -18,6 +18,7 @@ uint64_t hash_complemento(string spacedSeed, string sequenza_input);
 int preProcessing(string spacedSeed);
 uint64_t toInt(char seq);
 uint64_t leftRotate(uint64_t n, int d);
+string complementary(string spacedSeed);
 
 //fare una prova dei metodi fatti
 int main()
@@ -33,7 +34,8 @@ int main()
 	}
 
 	hash_complemento(spacedSeed,prova);
-	
+
+	cin.ignore();
 }
 
 //trova il primo hash, dalla posizione 0 a k-1
@@ -143,33 +145,10 @@ uint64_t hash_complemento(string spacedSeed,string sequenza_input)
 	return hash_complemento;
 }
 
-////preprocessing/////
+////preprocessing/////reer
 
-int preProcessing(string spacedSeedComp) {
+int preProcessing(string spacedSeed) {
 
-	//posizione dove conviene attaccarsi
-	int pos=0;
-	int score = 0;
-	int bestScore = score;
-	string temp = spacedSeedComp;
-	//toglie ultimo carattere e inserisce uno 0 in prima posizione
-	temp.pop_back();
-	temp.insert(0, 1, '0');
-	int iter = 1;
-	while (iter < spacedSeedComp.length()) {
-		//calcolo lo score di questo "attacco" di spacedseed
-		for (int j = 0; j < spacedSeedComp.length(); j++) {
-			if ((temp[j] == '1') && (spacedSeedComp[j] == '1'))
-				score++;
-		}
-		if (score > bestScore) {
-			pos = iter;
-		}
-		score = 0;
-		//riaggiusto la stringa 
-		temp.pop_back();
-		temp.insert(0, 1, '0');
-	}
-	return pos;
+	
 
 }
