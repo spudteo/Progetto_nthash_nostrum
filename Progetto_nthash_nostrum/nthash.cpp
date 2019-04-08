@@ -23,7 +23,7 @@ string complementary(string spacedSeed);
 //fare una prova dei metodi fatti
 int main()
 {
-	string spacedSeed = "11011011";
+	string spacedSeed = "1010";
 	int spaceSeedSize = spacedSeed.length();
 	
 	vector<uint64_t> hashVector;
@@ -34,6 +34,10 @@ int main()
 	}
 
 	hash_complemento(spacedSeed,prova);
+
+	cout << complementary(spacedSeed) << endl;
+
+	cout << preProcessing(complementary(spacedSeed)) << endl;
 
 	cin.ignore();
 }
@@ -187,12 +191,14 @@ int preProcessing(string spacedSeedComp) {
 				score++;
 		}
 		if (score > bestScore) {
+			bestScore = score;
 			pos = iter;
 		}
 		score = 0;
 		//riaggiusto la stringa 
 		temp.pop_back();
 		temp.insert(0, 1, '0');
+		iter++;
 	}
 	return pos;
 
