@@ -15,6 +15,7 @@ uint64_t primo_Hash(string sequenza_input,int spaceSeedSize);
 uint64_t restanti_Hash(uint64_t precedente, char uscente, char entrante, int spaceSeedSize );
 vector <uint64_t> total_seq_hash(string sequenza_input, int spaceSeedSize);
 uint64_t hash_complemento(string spacedSeed, string sequenza_input);
+int preProcessing(string spacedSeed);
 uint64_t toInt(char seq);
 uint64_t leftRotate(uint64_t n, int d);
 
@@ -105,7 +106,7 @@ uint64_t leftRotate(uint64_t n, int d)
 
 
 
-///////////////////////CAAPIRE COME FARE HASH DEL SINGOLO E BASTA//////////
+///////////////////////CAAPIRE COME FARE HASH DEL SINGOLO E BASTA//////////forse non serve///
 //calcola la stringa complemento della stringa spaceSeed
 uint64_t hash_complemento(string spacedSeed,string sequenza_input)
 {
@@ -140,4 +141,12 @@ uint64_t hash_complemento(string spacedSeed,string sequenza_input)
 	//calcolo l'hash della stringa complemento
 	uint64_t hash_complemento = 4445;
 	return hash_complemento;
+}
+
+////preprocessing/////reer
+
+int preProcessing(string spacedSeed) {
+
+	
+
 }
