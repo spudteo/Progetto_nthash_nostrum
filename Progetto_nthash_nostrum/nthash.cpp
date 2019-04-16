@@ -356,6 +356,7 @@ vector<string> read_save_file(string nomefile) {
 	//parsing entire file
 	while (!file.eof()) {
 		string temp;
+		string temp2;
 		//if there's a '>' ignore all files until new line, where the actual string starts
 		if (file.peek() == '>')
 			file.ignore(numeric_limits<streamsize>::max(), '\r\n');
@@ -364,8 +365,9 @@ vector<string> read_save_file(string nomefile) {
 				break;
 			getline(file, temp);
 			temp.erase(temp.length() - 2, 2);
-			sequences[index] = sequences[index] + temp;
+			temp2 = temp2 + temp;
 		}
+		sequences.push_back(temp2);
 		index++;
 	}
 	return sequences;
