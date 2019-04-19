@@ -36,15 +36,12 @@ int main()
 	ifstream inputfile;
 	inputfile.open(nomefile);
 	seqs = read_save_file(nomefile);
+	//non cancellare da qua in su se no non si puo fare un cazzo//
 
 
-	string spacedSeed = "1111111111111111111010101";
+	string spacedSeed = "11111";
 	int spaceSeedSize = spacedSeed.length();
 
-	for (int i = 0; i < seqs.size(); i++) {
-		cout << "nella posizione: " << i << endl;
-		cout << seqs[i] << endl;
-	}
 
 	/*
 	vector<uint64_t> hashVector;
@@ -336,7 +333,7 @@ vector<int> preProcessing_2(string spacedSeedComp, vector<int> ab) {
 	return comandi;
 }
 
-
+//legge il file e mette le sequenze in un vettore di stringhe
 vector<string> read_save_file(string nomefile) {
 
 	ifstream file(nomefile);
@@ -355,7 +352,7 @@ vector<string> read_save_file(string nomefile) {
 			primo++;
 			continue;
 		}
-		else{
+		else {
 			//accumula le stringhe tra due caratteri >
 			temp2.append(temp);
 		}
@@ -363,8 +360,9 @@ vector<string> read_save_file(string nomefile) {
 	return sequenze;
 }
 
+//restituisce il token e past 
 vector<string> getPastTok(int seqIndex, int tokIndex, vector<int> ab, int sslen) {
-	vector<string> pastTok;
+	vector<string> pastTok (2);
 	string seq = seqs[seqIndex];
 	pastTok[1] = seq.substr(tokIndex, sslen);
 	int dist = ab[0] - ab[1];
@@ -373,7 +371,7 @@ vector<string> getPastTok(int seqIndex, int tokIndex, vector<int> ab, int sslen)
 		pastTok[0] = "-1";
 		return pastTok;
 	}
-	pastTok[0] = seq.substr(tokIndex-dist, sslen);
+	pastTok[0] = seq.substr(tokIndex - dist, sslen);
 	return pastTok;
 }
 
@@ -386,7 +384,7 @@ uint64_t metodoNuovo_primiHash(vector<string> token, string spacedSeedComplement
 	for (int i = 0; i < spacedSeedComplementato.length(); i++) {
 		//se c'è un uno lo cndidero e faccio lo xor rotato giusto, altrimenti non faccio niente
 		if (spacedSeedComplementato[i] == '1') {
-			hash = hash ^ leftRotate(token[1].at(i), (spacedSeedComplementato.length() - 1 - i));
+			hash = hash ^ leftRotate(toInt(token[1].at(i)), (spacedSeedComplementato.length() - 1 - i));
 		}
 	}
 
