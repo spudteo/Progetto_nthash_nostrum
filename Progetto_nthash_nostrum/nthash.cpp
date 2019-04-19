@@ -11,6 +11,7 @@ static const uint64_t seedA = 0x3c8bfbb395c60474;
 static const uint64_t seedC = 0x3193c18562a02b4c;
 static const uint64_t seedG = 0x20323ed082572324;
 static const uint64_t seedT = 0x295549f54be24456;
+static const uint64_t hash_NULLO = 0x0000000000000000;
 
 vector<string> seqs;
 
@@ -25,6 +26,7 @@ uint64_t leftRotate(uint64_t n, int d);
 uint64_t rightRotate(uint64_t n, int d);
 vector<string> read_save_file(string nomefile);
 vector<string> getPastTok(int seqIndex, int tokIndex, vector<int> ab, int sslen);
+uint64_t metodoNuovo_primiHash(vector<string> token, string spacedSeedComplementato);
 
 int main()
 {
@@ -366,6 +368,27 @@ vector<string> getPastTok(int seqIndex, int tokIndex, vector<int> ab, int sslen)
 	string seq = seqs[seqIndex];
 	pastTok[1] = seq.substr(tokIndex, sslen);
 	int dist = ab[0] - ab[1];
+	if (tokIndex - dist < 0) {
+		cout << "Past vector not available, returning empty past." << endl;
+		pastTok[0] = "-1";
+		return pastTok;
+	}
 	pastTok[0] = seq.substr(tokIndex-dist, sslen);
 	return pastTok;
+}
+
+//calcola i primi (a-b) hash nel nostro nuovo metodo 
+uint64_t metodoNuovo_primiHash(vector<string> token, string spacedSeedComplementato) {
+
+	//primo sarà l'hash nullo
+	uint64_t hash = hash_NULLO;
+
+	for (int i = 0; i < spacedSeedComplementato.length(); i++) {
+		//se c'è un uno lo cndidero e faccio lo xor rotato giusto, altrimenti non faccio niente
+		if (spacedSeedComplementato[i] == '1') {
+			hash = hash ^ leftRotate(token[1].at(i), (spacedSeedComplementato.length() - 1 - i));
+		}
+	}
+
+	return hash;
 }
