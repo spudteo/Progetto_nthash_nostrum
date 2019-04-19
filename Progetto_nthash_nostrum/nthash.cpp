@@ -26,7 +26,7 @@ vector<string> read_save_file(string nomefile);
 int main()
 {
 	//parse command line DA FARE//////////
-	string nomefile = "C:\\Users\\ricca\\Desktop\\2∞ anno 2∞ semestre\\BioInfo\\single_end_dataset\\R1.fna";
+	string nomefile = "C:\\Users\\teosp\\OneDrive\\Desktop\\teouni\\Algoritmi per la bioinformatica\\dataaset\\small_test.fna";
 	//apre file 
 	ifstream inputfile;
 	inputfile.open(nomefile);
@@ -37,6 +37,7 @@ int main()
 	int spaceSeedSize = spacedSeed.length();
 
 	for (int i = 0; i < file.size(); i++) {
+		cout << "nella posizione: " << i << endl;
 		cout << file[i] << endl;
 	}
 
@@ -45,7 +46,7 @@ int main()
 	string prova = "ACGTACGTACTGTCAGTCGATGCCTAGGTCATGCATGCGTCATGCATCATGCAGTCAGTACGTGCTATCGATGACTGACCAGTCAGTCGTAGCTAGCTAGCTAGCTCATGACTACTGACTATCTACTACTACTATCACC";
 	hashVector = total_seq_hash(prova, spaceSeedSize);
 	for (int i = 0; i < hashVector.size(); i++) {
-		cout << hashVector[i] << endl;
+	cout << hashVector[i] << endl;
 	}
 	*/
 	/*
@@ -58,13 +59,12 @@ int main()
 	s = preProcessing_2(comp,p);
 	for (int i = 0; i < s.size(); i++)
 	{
-		cout << s[i];
-		cout << " ";
+	cout << s[i];
+	cout << " ";
 	}
-
 	*/
 
-
+	cout << "fine main" << endl;
 	cin.ignore();
 }
 
@@ -77,7 +77,7 @@ uint64_t primo_Hash(string sequenza_input, int spaceSeedSize) {
 	//ciclo lungo come il k-mer
 	for (int i = 1; i < spaceSeedSize; i++)
 	{
-		//calcola lo shift necessario e poi fa lo XOR con quanto gi‡ calcolato 
+		//calcola lo shift necessario e poi fa lo XOR con quanto gi√† calcolato 
 		temp = leftRotate(toInt(sequenza_input[i]), spaceSeedSize - i + 1);
 		hash = hash ^ temp;
 	}
@@ -93,7 +93,7 @@ uint64_t restanti_Hash(uint64_t precedente, char uscente, char entrante, int spa
 	return hash;
 }
 
-//trova tutti gli hash e restituisce il vettore con gli hash, la posizione Ë l'indice di hash
+//trova tutti gli hash e restituisce il vettore con gli hash, la posizione √® l'indice di hash
 vector <uint64_t> total_seq_hash(string sequenza_input, int spaceSeedSize) {
 
 	//dentro il vettore ci salvo tutti gli hash 
@@ -105,7 +105,7 @@ vector <uint64_t> total_seq_hash(string sequenza_input, int spaceSeedSize) {
 	hashVector[0] = primoHash;
 
 	//calcolo tutti gli altri hash e li aggiungo nel vettore
-	//indice parte da 1 perchË 0 gi‡ calcolato,
+	//indice parte da 1 perch√® 0 gi√† calcolato,
 	//si ferma ad i = (l-k) (lunghezza input- lunghezza finestra)
 	for (int i = 1; i <= sequenza_input.length() - spaceSeedSize; i++)
 	{
@@ -142,61 +142,57 @@ uint64_t rightRotate(uint64_t n, int d)
 //calcola la stringa complemento della stringa spaceSeed
 uint64_t hash_complemento(string spacedSeed, string sequenza_input)
 {
-	//calcolo il complemento che mi serve
-	int pos1 = 0;
-	int pos2 = 0;
-	bool primo = true;
-	for	(int i = 0; i < spacedSeed.length(); i++) {
-		//cerco la pos del primo zero
-		if (primo) {
-			if (spacedSeed[i] == '0') {
-				pos1 = i;
-				primo = false;
-			}
-
-		}
-		if (spacedSeed[i] == '0')
-			pos2 = i;
-	}
-	//error
-	if (pos1 == 0 && pos2 == 0) return -1;
-
-	//creo la stringa
-	string complemento;
-	for (int i = pos1; i <= pos2; i++) {
-		if (spacedSeed[i] == '0')
-			complemento.append("1");
-		if (spacedSeed[i] == '1')
-			complemento.append("0");
-	}
-
-	//calcolo l'hash della stringa complemento
-	uint64_t hash_complemento = 4445;
-	return hash_complemento;
+//calcolo il complemento che mi serve
+int pos1 = 0;
+int pos2 = 0;
+bool primo = true;
+for	(int i = 0; i < spacedSeed.length(); i++) {
+//cerco la pos del primo zero
+if (primo) {
+if (spacedSeed[i] == '0') {
+pos1 = i;
+primo = false;
+}
+}
+if (spacedSeed[i] == '0')
+pos2 = i;
+}
+//error
+if (pos1 == 0 && pos2 == 0) return -1;
+//creo la stringa
+string complemento;
+for (int i = pos1; i <= pos2; i++) {
+if (spacedSeed[i] == '0')
+complemento.append("1");
+if (spacedSeed[i] == '1')
+complemento.append("0");
+}
+//calcolo l'hash della stringa complemento
+uint64_t hash_complemento = 4445;
+return hash_complemento;
 }
 */
 /*
 ////finding the reduced complementary of the spaced seed
 string complementary(string spacedSeed) {
-	string comp;
-	for (int i = 0; i < spacedSeed.length(); i++) {
-		if (spacedSeed[i] == '0')
-			comp.push_back('1');
-		else
-			comp.push_back('0');
-	}
-
-	int i = 0;
-	int j = spacedSeed.length() - 1;
-	while (comp[i] == '0') {
-		i++;
-	}
-	while (comp[j] == '0') {
-		j--;
-	}
-	comp.erase(0, i);
-	comp.erase(j - (i - 1), comp.length());
-	return comp;
+string comp;
+for (int i = 0; i < spacedSeed.length(); i++) {
+if (spacedSeed[i] == '0')
+comp.push_back('1');
+else
+comp.push_back('0');
+}
+int i = 0;
+int j = spacedSeed.length() - 1;
+while (comp[i] == '0') {
+i++;
+}
+while (comp[j] == '0') {
+j--;
+}
+comp.erase(0, i);
+comp.erase(j - (i - 1), comp.length());
+return comp;
 }
 */
 
@@ -298,7 +294,7 @@ vector<int> preProcessing_2(string spacedSeedComp, vector<int> ab) {
 	string primo = spacedSeedComp.substr(ab[0], spacedSeedComp.length() - ab[0]) + spacedSeedComp.substr(0, ab[0]);
 	string secondo = spacedSeedComp.substr(ab[1], spacedSeedComp.length() - ab[1]) + spacedSeedComp.substr(0, ab[1]);
 
-	//la prima parte se Ë gia apposto non si tocca il resto si
+	//la prima parte se √® gia apposto non si tocca il resto si
 	for (int i = 0; i < primo.length(); i++) {
 		if (primo[i] == 'x')
 			break;
@@ -338,37 +334,26 @@ vector<int> preProcessing_2(string spacedSeedComp, vector<int> ab) {
 
 vector<string> read_save_file(string nomefile) {
 
-	/*
-	ifstream t(nomefile);
-	string str;
-
-	t.seekg(0, std::ios::end);
-	str.reserve(t.tellg());
-	t.seekg(0, std::ios::beg);
-
-	str.assign((std::istreambuf_iterator<char>(t)),
-		std::istreambuf_iterator<char>());
-	return str;*/
-
 	ifstream file(nomefile);
-	vector<string> sequences;
-	int index = 0;
-	//parsing entire file
-	while (!file.eof()) {
-		string temp;
-		string temp2;
-		//if there's a '>' ignore all files until new line, where the actual string starts
-		if (file.peek() == '>')
-			file.ignore(numeric_limits<streamsize>::max(), '\r\n');
-		for (;;) {
-			if (file.peek() == '>')
-				break;
-			getline(file, temp);
-			temp.erase(temp.length() - 2, 2);
-			temp2 = temp2 + temp;
+	vector<string> sequenze;
+	string temp;
+	string temp2;
+	int primo = 0;
+	//legge una linea alla volta
+	while (getline(file, temp)) {
+		if (temp[0] == '>' || file.eof()) {
+			if (primo > 0) {
+				//inserisce la sequenza al vettore
+				sequenze.push_back(temp2);
+				temp2 = "";
+			}
+			primo++;
+			continue;
 		}
-		sequences.push_back(temp2);
-		index++;
+		else{
+			//accumula le stringhe tra due caratteri >
+			temp2.append(temp);
+		}
 	}
-	return sequences;
+	return sequenze;
 }
