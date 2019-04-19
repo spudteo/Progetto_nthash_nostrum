@@ -12,6 +12,8 @@ static const uint64_t seedC = 0x3193c18562a02b4c;
 static const uint64_t seedG = 0x20323ed082572324;
 static const uint64_t seedT = 0x295549f54be24456;
 
+vector<string> seqs;
+
 uint64_t primo_Hash(string sequenza_input, int spaceSeedSize);
 uint64_t restanti_Hash(uint64_t precedente, char uscente, char entrante, int spaceSeedSize);
 vector <uint64_t> total_seq_hash(string sequenza_input, int spaceSeedSize);
@@ -22,6 +24,7 @@ uint64_t toInt(char seq);
 uint64_t leftRotate(uint64_t n, int d);
 uint64_t rightRotate(uint64_t n, int d);
 vector<string> read_save_file(string nomefile);
+vector<string> getPastTok(int seqIndex, int tokIndex, vector<int> ab, int sslen);
 
 int main()
 {
@@ -30,15 +33,15 @@ int main()
 	//apre file 
 	ifstream inputfile;
 	inputfile.open(nomefile);
-	vector<string> file = read_save_file(nomefile);
+	seqs = read_save_file(nomefile);
 
 
 	string spacedSeed = "1111111111111111111010101";
 	int spaceSeedSize = spacedSeed.length();
 
-	for (int i = 0; i < file.size(); i++) {
+	for (int i = 0; i < seqs.size(); i++) {
 		cout << "nella posizione: " << i << endl;
-		cout << file[i] << endl;
+		cout << seqs[i] << endl;
 	}
 
 	/*
@@ -356,4 +359,13 @@ vector<string> read_save_file(string nomefile) {
 		}
 	}
 	return sequenze;
+}
+
+vector<string> getPastTok(int seqIndex, int tokIndex, vector<int> ab, int sslen) {
+	vector<string> pastTok;
+	string seq = seqs[seqIndex];
+	pastTok[1] = seq.substr(tokIndex, sslen);
+	int dist = ab[0] - ab[1];
+	pastTok[0] = seq.substr(tokIndex-dist, sslen);
+	return pastTok;
 }
