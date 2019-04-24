@@ -27,6 +27,11 @@ uint64_t rightRotate(uint64_t n, int d);
 vector<string> read_save_file(string nomefile);
 vector<string> getPastTok(int seqIndex, int tokIndex, vector<int> ab, int sslen);
 uint64_t metodoNuovo_primiHash(vector<string> token, string spacedSeedComplementato);
+uint64_t metodoNuovo_restantiHash(string past, string token, vector<int> ab, uint64_t hashVecchio, vector<int> comandi);
+uint64_t hash_stupido(string sequenza_input, string spacedSeed);
+vector<uint64_t> hash_stupido_UNASeq(string sequenza, string spacedSeed);
+vector<vector<uint64_t>> hash_stupido_interaSeq(string spacedSeed);
+
 
 int main()
 {
@@ -39,8 +44,28 @@ int main()
 	//non cancellare da qua in su se no non si puo fare un cazzo//
 
 
-	string spacedSeed = "11111";
+	string spacedSeed = "101";
 	int spaceSeedSize = spacedSeed.length();
+
+	//prova metodo "stupido"
+	vector<vector<uint64_t>> prova_1 = hash_stupido_interaSeq(spacedSeed);
+	for (int i = 0; i < prova_1.size(); i++) {
+		cout << " Hash sequenza: " << i << endl;
+		for (int j = 0; j < prova_1.at(i).size(); j++) {
+			cout << "Hash: " << prova_1.at(i).at(j) << endl;
+		}
+	}
+	
+
+	//prova dei primi hash con il nuovo metodo
+	vector<string> token;
+	token.push_back("ytgh");
+	string sequenza;
+	for (int i = 0; i < spacedSeed.length(); i++) {
+		sequenza += seqs.at(0)[i];
+	}
+	token.push_back(sequenza);
+	cout << "Hash nuovo metodo: " << metodoNuovo_primiHash(token,spacedSeed)<<endl;
 
 
 	/*
@@ -70,7 +95,7 @@ int main()
 	cin.ignore();
 }
 
-//trova il primo hash, dalla posizione 0 a k-1
+//SEED-tutti uni-trova il primo hash, dalla posizione 0 a k-1
 uint64_t primo_Hash(string sequenza_input, int spaceSeedSize) {
 
 	//il primo carattere
@@ -87,7 +112,7 @@ uint64_t primo_Hash(string sequenza_input, int spaceSeedSize) {
 	return hash;
 }
 
-//trova i restanti hash fino all'ultimo k-mer
+//SEED-tutti uni-trova i restanti hash fino all'ultimo k-mer
 uint64_t restanti_Hash(uint64_t precedente, char uscente, char entrante, int spaceSeedSize) {
 
 	//hash di quello che sta prima ruotato di 1 XOR hash carattere che esce ruotato di k XOR hash di quello che esce 
@@ -95,7 +120,7 @@ uint64_t restanti_Hash(uint64_t precedente, char uscente, char entrante, int spa
 	return hash;
 }
 
-//trova tutti gli hash e restituisce il vettore con gli hash, la posizione è l'indice di hash
+//SEED-tutti uni-trova tutti gli hash e restituisce il vettore con gli hash, la posizione è l'indice di hash
 vector <uint64_t> total_seq_hash(string sequenza_input, int spaceSeedSize) {
 
 	//dentro il vettore ci salvo tutti gli hash 
@@ -139,64 +164,6 @@ uint64_t rightRotate(uint64_t n, int d)
 {
 	return (n >> d) | (n << (LONG_LONG_BITS - d));
 }
-
-/*
-//calcola la stringa complemento della stringa spaceSeed
-uint64_t hash_complemento(string spacedSeed, string sequenza_input)
-{
-//calcolo il complemento che mi serve
-int pos1 = 0;
-int pos2 = 0;
-bool primo = true;
-for	(int i = 0; i < spacedSeed.length(); i++) {
-//cerco la pos del primo zero
-if (primo) {
-if (spacedSeed[i] == '0') {
-pos1 = i;
-primo = false;
-}
-}
-if (spacedSeed[i] == '0')
-pos2 = i;
-}
-//error
-if (pos1 == 0 && pos2 == 0) return -1;
-//creo la stringa
-string complemento;
-for (int i = pos1; i <= pos2; i++) {
-if (spacedSeed[i] == '0')
-complemento.append("1");
-if (spacedSeed[i] == '1')
-complemento.append("0");
-}
-//calcolo l'hash della stringa complemento
-uint64_t hash_complemento = 4445;
-return hash_complemento;
-}
-*/
-/*
-////finding the reduced complementary of the spaced seed
-string complementary(string spacedSeed) {
-string comp;
-for (int i = 0; i < spacedSeed.length(); i++) {
-if (spacedSeed[i] == '0')
-comp.push_back('1');
-else
-comp.push_back('0');
-}
-int i = 0;
-int j = spacedSeed.length() - 1;
-while (comp[i] == '0') {
-i++;
-}
-while (comp[j] == '0') {
-j--;
-}
-comp.erase(0, i);
-comp.erase(j - (i - 1), comp.length());
-return comp;
-}
-*/
 
 //ritorn la stinga complementata con le x all'inizio e alla fine
 string complemento(string spacedSeed)
@@ -382,11 +349,62 @@ uint64_t metodoNuovo_primiHash(vector<string> token, string spacedSeedComplement
 	uint64_t hash = hash_NULLO;
 
 	for (int i = 0; i < spacedSeedComplementato.length(); i++) {
-		//se c'è un uno lo cndidero e faccio lo xor rotato giusto, altrimenti non faccio niente
+		//se c'è un uno lo considero e faccio lo xor rotato giusto, altrimenti non faccio niente
 		if (spacedSeedComplementato[i] == '1') {
 			hash = hash ^ leftRotate(toInt(token[1].at(i)), (spacedSeedComplementato.length() - 1 - i));
 		}
 	}
 
 	return hash;
+}
+
+
+//CONTROLLO DA QUA IN GIU /////////////////////////////////
+
+//calcola i restanti hash con il nostro nuovo metodo
+uint64_t metodoNuovo_restantiHash(string past, string token, vector<int> ab, uint64_t hashVecchio,vector<int> comandi) {
+	return 4;
+}
+
+
+//CONTROLLO FINO A QUA /////////////
+
+
+//calcola l'hash in maniera "stupida" andando a vedere ogni 0 ed ogni 1 
+//nello spaced seed e fa i conti di conseguenza
+uint64_t hash_stupido(string sequenza_input, string spacedSeed) {
+
+	uint64_t hash = hash_NULLO;
+	for (int i = 0; i < spacedSeed.length(); i++) {
+		if (spacedSeed[i] == '1') {
+			hash = hash ^ leftRotate(toInt(sequenza_input[i]), sequenza_input.length() - 1 - i);
+		}
+	}
+	return hash;
+}
+
+//calcola tutti gli hash per una intera sequenza e li mette dentro un vettore che poi ritorna 
+vector<uint64_t> hash_stupido_UNASeq(string sequenza, string spacedSeed) {
+
+	vector<uint64_t> hashSeq;
+	for (int i = 0; i <= sequenza.length() - spacedSeed.length(); i++) {
+		//creo la stringa da dare in input al metodo che deve essere grande come lo spacedSeed
+		string sequenza_input;
+		for (int j = 0; j < spacedSeed.length(); j++) {
+			sequenza_input += sequenza[i+j];
+		}
+		hashSeq.push_back(hash_stupido(sequenza_input,spacedSeed));
+	}
+
+	return hashSeq;
+}
+
+//calcola tutti gli hash di tutte le sequenze che ci sono dentro seq e che legge dal file 
+vector<vector<uint64_t>> hash_stupido_interaSeq(string spacedSeed) {
+
+	vector<vector<uint64_t>> fullHash;
+	for (int i = 0; i < seqs.size(); i++) {
+		fullHash.push_back(hash_stupido_UNASeq(seqs.at(i),spacedSeed));
+	}
+	return fullHash;
 }
