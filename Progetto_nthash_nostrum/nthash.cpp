@@ -18,7 +18,7 @@ vector<string> seqs;
 uint64_t primo_Hash(string sequenza_input, int spaceSeedSize);
 uint64_t restanti_Hash(uint64_t precedente, char uscente, char entrante, int spaceSeedSize);
 vector <uint64_t> total_seq_hash(string sequenza_input, int spaceSeedSize);
-vector<vector<uint64_t>> sequenzeTotaliSeedUni(string spacedSeed) {
+vector<vector<uint64_t>> sequenzeTotaliSeedUni(string spacedSeed);
 string complemento(string spacedSeed);
 vector<int> preProcessing_1(string spacedSeedComp);
 vector<int> preProcessing_2(string spacedSeedComp, vector<int> ab);
