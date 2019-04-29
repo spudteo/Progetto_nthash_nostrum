@@ -1,4 +1,4 @@
-#include <iostream>
+##include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
@@ -18,6 +18,7 @@ vector<string> seqs;
 uint64_t primo_Hash(string sequenza_input, int spaceSeedSize);
 uint64_t restanti_Hash(uint64_t precedente, char uscente, char entrante, int spaceSeedSize);
 vector <uint64_t> total_seq_hash(string sequenza_input, int spaceSeedSize);
+vector<vector<uint64_t>> sequenzeTotaliSeedUni(string spacedSeed) {
 string complemento(string spacedSeed);
 vector<int> preProcessing_1(string spacedSeedComp);
 vector<int> preProcessing_2(string spacedSeedComp, vector<int> ab);
@@ -26,11 +27,13 @@ uint64_t leftRotate(uint64_t n, int d);
 uint64_t rightRotate(uint64_t n, int d);
 vector<string> read_save_file(string nomefile);
 vector<string> getPastTok(int seqIndex, int tokIndex, vector<int> ab, int sslen);
-uint64_t metodoNuovo_primiHash(vector<string> token, string spacedSeedComplementato);
+uint64_t metodoNuovo_primiHash(string token, string spacedSeedComplementato);
 uint64_t metodoNuovo_restantiHash(string past, string token, vector<int> ab, uint64_t hashVecchio, vector<int> comandi);
 uint64_t hash_stupido(string sequenza_input, string spacedSeed);
 vector<uint64_t> hash_stupido_UNASeq(string sequenza, string spacedSeed);
 vector<vector<uint64_t>> hash_stupido_interaSeq(string spacedSeed);
+vector<uint64_t> metodoNuovo_UNASeq(string sequenza, string spacedSeed);
+vector<vector<uint64_t>> metodoNuovo_interaSeq(string spacedSeed);
 
 
 int main()
@@ -56,7 +59,7 @@ int main()
 		}
 	}
 	
-
+	/*
 	//prova dei primi hash con il nuovo metodo
 	vector<string> token;
 	token.push_back("ytgh");
@@ -66,7 +69,7 @@ int main()
 	}
 	token.push_back(sequenza);
 	cout << "Hash nuovo metodo: " << metodoNuovo_primiHash(token,spacedSeed)<<endl;
-
+	*/
 
 	/*
 	vector<uint64_t> hashVector;
@@ -141,6 +144,15 @@ vector <uint64_t> total_seq_hash(string sequenza_input, int spaceSeedSize) {
 	}
 
 	return hashVector;
+}
+
+//SEED-tutti uni-calcola tutti gli hash di tutte le sequenze che ci sono dentro seq e che legge dal file 
+vector<vector<uint64_t>> sequenzeTotaliSeedUni(string spacedSeed) {
+	vector<vector<uint64_t>> fullHash;
+	for (int i = 0; i < seqs.size(); i++) {
+		fullHash.push_back(total_seq_hash(seqs.at(i), spacedSeed.length()));
+	}
+	return fullHash;
 }
 
 //dalla sequenza prendere il relativo "hash numerico"
@@ -343,18 +355,14 @@ vector<string> getPastTok(int seqIndex, int tokIndex, vector<int> ab, int sslen)
 }
 
 //calcola i primi (a-b) hash nel nostro nuovo metodo 
-uint64_t metodoNuovo_primiHash(vector<string> token, string spacedSeedComplementato) {
+uint64_t metodoNuovo_primiHash(string token, string spacedSeedComplementato) {
 
-	//primo sarà l'hash nullo
 	uint64_t hash = hash_NULLO;
-
-	for (int i = 0; i < spacedSeedComplementato.length(); i++) {
-		//se c'è un uno lo considero e faccio lo xor rotato giusto, altrimenti non faccio niente
+	for (int i = 0; i < token.length(); i++) {
 		if (spacedSeedComplementato[i] == '1') {
-			hash = hash ^ leftRotate(toInt(token[1].at(i)), (spacedSeedComplementato.length() - 1 - i));
+			hash = hash ^ leftRotate(toInt(token[i]), token.length() - 1 - i);
 		}
 	}
-
 	return hash;
 }
 
@@ -366,12 +374,21 @@ uint64_t metodoNuovo_restantiHash(string past, string token, vector<int> ab, uin
 	return 4;
 }
 
+//calcola tutti gli hash per una intera sequenza e li mette dentro un vettore che poi ritorna  
+vector<uint64_t> metodoNuovo_UNASeq(string sequenza, string spacedSeed) {
+	vector<uint64_t> hashSeq;
+	return hashSeq; 
+}
 
+//calcola tutti gli hash di tutte le sequenze che ci sono dentro seq e che legge dal file
+vector<vector<uint64_t>> metodoNuovo_interaSeq(string spacedSeed) {
+	vector<vector<uint64_t>> fullHash;
+	return fullHash;
+}
 //CONTROLLO FINO A QUA /////////////
 
 
-//calcola l'hash in maniera "stupida" andando a vedere ogni 0 ed ogni 1 
-//nello spaced seed e fa i conti di conseguenza
+//calcola l'hash in maniera "stupida" andando a vedere ogni 0 ed ogni 1 nello spaced seed e fa i conti di conseguenza
 uint64_t hash_stupido(string sequenza_input, string spacedSeed) {
 
 	uint64_t hash = hash_NULLO;
