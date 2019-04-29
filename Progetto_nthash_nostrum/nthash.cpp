@@ -37,11 +37,10 @@ vector<vector<uint64_t>> metodoNuovo_interaSeq(string spacedSeedComplementato);
 vector<vector<uint64_t>> finalHash(vector<vector<uint64_t>> complete, vector<vector<uint64_t>> spaced);
 
 
-int main(int argc, char *argv[])
+int main()
 {
-	string seqFile = argv[0];
 	//parse command line DA FARE//////////
-	string nomefile = "C:\\Users\\teosp\\OneDrive\\Desktop\\teouni\\Algoritmi per la bioinformatica\\dataaset\\" + seqFile;
+	string nomefile = "C:\\Users\\teosp\\OneDrive\\Desktop\\teouni\\Algoritmi per la bioinformatica\\dataaset\\small_test.fna";
 	//apre file 
 	ifstream inputfile;
 	inputfile.open(nomefile);
@@ -49,18 +48,21 @@ int main(int argc, char *argv[])
 	//non cancellare da qua in su se no non si puo fare un cazzo//
 
 
-	string spacedSeed = argv[1];
+	string spacedSeed = "110010101101010101001";
 	int spaceSeedSize = spacedSeed.length();
 
 	//prova metodo "stupido"
 	vector<vector<uint64_t>> prova_1 = hash_stupido_interaSeq(spacedSeed);
+
+	vector<vector<uint64_t>> prova_2 = finalHash(sequenzeTotaliSeedUni(spacedSeed), metodoNuovo_interaSeq(spacedSeed));
+
 	for (int i = 0; i < prova_1.size(); i++) {
 		cout << " Hash sequenza: " << i << endl;
 		for (int j = 0; j < prova_1.at(i).size(); j++) {
-			cout << "Hash: " << prova_1.at(i).at(j) << endl;
+			cout << "Hash stupido: " << prova_1.at(i).at(j) << "  Hash nostro: " << prova_2.at(i).at(j) << endl;
 		}
 	}
-
+	
 	/*
 	//prova dei primi hash con il nuovo metodo
 	vector<string> token;
@@ -170,6 +172,7 @@ uint64_t toInt(char seq) {
 //fa la rotazione di n per d bits
 uint64_t leftRotate(uint64_t n, int d)
 {
+
 	return (n << d) | (n >> (LONG_LONG_BITS - d));
 }
 
@@ -343,7 +346,7 @@ vector<string> read_save_file(string nomefile) {
 
 //restituisce il token e past 
 vector<string> getPastTok(int seqIndex, int tokIndex, vector<int> ab, int sslen) {
-	vector<string> pastTok(2);
+	vector<string> pastTok (2);
 	string seq = seqs[seqIndex];
 	pastTok[1] = seq.substr(tokIndex, sslen);
 	int dist = ab[0] - ab[1];
@@ -368,48 +371,74 @@ uint64_t metodoNuovo_primiHash(string token, string spacedSeedComplementato) {
 	return hash;
 }
 
-
-//CONTROLLO DA QUA IN GIU /////////////////////////////////
-
 //calcola i restanti hash con il nostro nuovo metodo
-uint64_t metodoNuovo_restantiHash(string past, string token, vector<int> ab, uint64_t hashVecchio, vector<int> comandi) {
-	return 4;
-}
+uint64_t metodoNuovo_restantiHash(string past, string token, vector<int> ab, uint64_t hashVecchio,vector<int> comandi) {
 
-//CONTROLLO FINO A QUA
+	//rotate a sx di a 
+	uint64_t newHash = leftRotate(hashVecchio,ab[0]);
+
+	for (int i = 0; i < comandi.size(); i++) {
+		switch (comandi[i])
+		{
+		//inserimento
+		case 1:
+			newHash = newHash ^ (leftRotate(toInt(token[i]), (comandi.size() - i - 1)));
+			break;
+		//cancellazione
+		case 2:
+			newHash = newHash ^ (leftRotate(toInt(past[i]), (comandi.size() - i - 1)));
+			break;
+		//entrambe
+		case 3:
+			newHash = newHash ^ (leftRotate(toInt(token[i]), (comandi.size() - i - 1)));
+			newHash = newHash ^ (leftRotate(toInt(past[i]), (comandi.size() - i - 1)));
+			break;
+		//avevamo già il carattere nella posizione giusta
+		default:
+			break;
+		}
+	}
+
+	//rotate a destra di b 
+	newHash = rightRotate(newHash, ab[1]);
+
+	return newHash;
+}
 
 //calcola tutti gli hash per una intera sequenza e li mette dentro un vettore che poi ritorna  
 vector<uint64_t> metodoNuovo_UNASeq(string sequenza, string spacedSeedComplementato, vector<int> ab, vector<int> comandi) {
 
 	vector<uint64_t> hashSeq;
-
+	
 	int primi = (ab[0] - ab[1]);
 	//calcola i primi hash 
-	for (int i = 0; i <= primi; i++) {
+	for (int i = 0; i < primi; i++) {
 		string token;
 		for (int j = 0; j < spacedSeedComplementato.length(); j++) {
 			token += sequenza[i + j];
 		}
-		hashSeq.push_back(metodoNuovo_primiHash(token, spacedSeedComplementato));
+		hashSeq.push_back(metodoNuovo_primiHash(token,spacedSeedComplementato));
 	}
 
 	//calcoliamo i restanti hash
 	//ogni possibile k sequenza dentro l'intera sequenza
-	for (int i = primi + 1; i <= sequenza.length() - spacedSeedComplementato.length(); i++) {
+	for (int i = primi; i <= sequenza.length() - spacedSeedComplementato.length(); i++) {
 		//creo la stringa da dare in input al metodo che deve essere grande come lo spacedSeed
 		string token;
 		string past;
+
 		for (int j = 0; j < spacedSeedComplementato.length(); j++) {
 			token += sequenza[i + j];
 		}
-		for (int j = i - (primi); j < spacedSeedComplementato.length(); j++) {
-			past += sequenza[i - (primi)+j];
+		for (int j = 0; j < spacedSeedComplementato.length(); j++) {
+			past += sequenza[i-(primi) + j];
 		}
 		hashSeq.push_back(metodoNuovo_restantiHash(past, token, ab, hashSeq.at(i - (primi)), comandi));
+
 	}
 
 
-	return hashSeq;
+	return hashSeq; 
 }
 
 //calcola tutti gli hash di tutte le sequenze che ci sono dentro seq e che legge dal file
@@ -422,11 +451,10 @@ vector<vector<uint64_t>> metodoNuovo_interaSeq(string spacedSeed) {
 	vector<int> comandi = preProcessing_2(spacedSeedComplementato, ab);
 
 	for (int i = 0; i < seqs.size(); i++) {
-		fullHash.push_back(metodoNuovo_UNASeq(seqs.at(i), spacedSeedComplementato, ab, comandi));
+		fullHash.push_back(metodoNuovo_UNASeq(seqs.at(i), spacedSeedComplementato,ab,comandi));
 	}
 	return fullHash;
 }
-
 
 //calcola l'hash in maniera "stupida" andando a vedere ogni 0 ed ogni 1 nello spaced seed e fa i conti di conseguenza
 uint64_t hash_stupido(string sequenza_input, string spacedSeed) {
@@ -448,9 +476,9 @@ vector<uint64_t> hash_stupido_UNASeq(string sequenza, string spacedSeed) {
 		//creo la stringa da dare in input al metodo che deve essere grande come lo spacedSeed
 		string sequenza_input;
 		for (int j = 0; j < spacedSeed.length(); j++) {
-			sequenza_input += sequenza[i + j];
+			sequenza_input += sequenza[i+j];
 		}
-		hashSeq.push_back(hash_stupido(sequenza_input, spacedSeed));
+		hashSeq.push_back(hash_stupido(sequenza_input,spacedSeed));
 	}
 
 	return hashSeq;
@@ -461,22 +489,22 @@ vector<vector<uint64_t>> hash_stupido_interaSeq(string spacedSeed) {
 
 	vector<vector<uint64_t>> fullHash;
 	for (int i = 0; i < seqs.size(); i++) {
-		fullHash.push_back(hash_stupido_UNASeq(seqs.at(i), spacedSeed));
+		fullHash.push_back(hash_stupido_UNASeq(seqs.at(i),spacedSeed));
 	}
 	return fullHash;
 }
 
 //calcola la differenza tra l'hash completo e quello ottenuto con lo spaced seeds
 vector<vector<uint64_t>> finalHash(vector<vector<uint64_t>> complete, vector<vector<uint64_t>> spaced) {
+
 	vector<vector<uint64_t>> finalH;
-	vector<uint64_t> completeH;
-	vector<uint64_t> spacedH;
+
 	for (int i = 0; i < complete.size(); i++) {
-		completeH = complete.at(i);
-		spacedH = spaced.at(i);
+		vector<uint64_t> uniMenoSpace;
 		for (int j = 0; j < complete.at(i).size(); j++) {
-			finalH.at(i).push_back(completeH.at(j) ^ spacedH.at(j));
+			uniMenoSpace.push_back(complete.at(i).at(j) ^ spaced.at(i).at(j));
 		}
+		finalH.push_back(uniMenoSpace);
 	}
 	return finalH;
 }
