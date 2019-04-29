@@ -39,8 +39,9 @@ vector<vector<uint64_t>> finalHash(vector<vector<uint64_t>> complete, vector<vec
 
 int main(int argc, char *argv[])
 {
+	string seqFile = argv[0];
 	//parse command line DA FARE//////////
-	string nomefile = "C:\\Users\\teosp\\OneDrive\\Desktop\\teouni\\Algoritmi per la bioinformatica\\dataaset\\small_test.fna";
+	string nomefile = "C:\\Users\\teosp\\OneDrive\\Desktop\\teouni\\Algoritmi per la bioinformatica\\dataaset\\" + seqFile;
 	//apre file 
 	ifstream inputfile;
 	inputfile.open(nomefile);
@@ -48,7 +49,7 @@ int main(int argc, char *argv[])
 	//non cancellare da qua in su se no non si puo fare un cazzo//
 
 
-	string spacedSeed = "101";
+	string spacedSeed = argv[1];
 	int spaceSeedSize = spacedSeed.length();
 
 	//prova metodo "stupido"
