@@ -1,0 +1,99 @@
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R1.fna -s 1111011101110010111001011011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R1.fna -s 1111101011100101101110011011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R1.fna -s 1111101001110101101100111011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R1.fna -s 1111010111010011001110111110111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R1.fna -s 1110111011101111010010110011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R1.fna -s 1111101001011100111110101101111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R1.fna -s 1111011110011010111110101011011 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R1.fna -s 1110101011101100110100111111111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R1.fna -s 1111110101101011100111011001111 >> test.txt
+
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R1.fna -s 1111011101110010111001011011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R1.fna -s 1111101011100101101110011011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R1.fna -s 1111101001110101101100111011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R1.fna -s 1111010111010011001110111110111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R1.fna -s 1110111011101111010010110011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R1.fna -s 1111101001011100111110101101111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R1.fna -s 1111011110011010111110101011011 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R1.fna -s 1110101011101100110100111111111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R1.fna -s 1111110101101011100111011001111 >> test.txt
+
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R2.fna -s 1111011101110010111001011011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R2.fna -s 1111101011100101101110011011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R2.fna -s 1111101001110101101100111011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R2.fna -s 1111010111010011001110111110111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R2.fna -s 1110111011101111010010110011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R2.fna -s 1111101001011100111110101101111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R2.fna -s 1111011110011010111110101011011 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R2.fna -s 1110101011101100110100111111111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R2.fna -s 1111110101101011100111011001111 >> test.txt
+
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R3.fna -s 1111011101110010111001011011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R3.fna -s 1111101011100101101110011011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R3.fna -s 1111101001110101101100111011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R3.fna -s 1111010111010011001110111110111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R3.fna -s 1110111011101111010010110011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R3.fna -s 1111101001011100111110101101111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R3.fna -s 1111011110011010111110101011011 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R3.fna -s 1110101011101100110100111111111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R3.fna -s 1111110101101011100111011001111 >> test.txt
+
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R4.fna -s 1111011101110010111001011011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R4.fna -s 1111101011100101101110011011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R4.fna -s 1111101001110101101100111011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R4.fna -s 1111010111010011001110111110111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R4.fna -s 1110111011101111010010110011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R4.fna -s 1111101001011100111110101101111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R4.fna -s 1111011110011010111110101011011 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R4.fna -s 1110101011101100110100111111111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R4.fna -s 1111110101101011100111011001111 >> test.txt
+
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R5.fna -s 1111011101110010111001011011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R5.fna -s 1111101011100101101110011011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R5.fna -s 1111101001110101101100111011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R5.fna -s 1111010111010011001110111110111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R5.fna -s 1110111011101111010010110011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R5.fna -s 1111101001011100111110101101111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R5.fna -s 1111011110011010111110101011011 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R5.fna -s 1110101011101100110100111111111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R5.fna -s 1111110101101011100111011001111 >> test.txt
+
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R6.fna -s 1111011101110010111001011011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R6.fna -s 1111101011100101101110011011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R6.fna -s 1111101001110101101100111011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R6.fna -s 1111010111010011001110111110111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R6.fna -s 1110111011101111010010110011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R6.fna -s 1111101001011100111110101101111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R6.fna -s 1111011110011010111110101011011 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R6.fna -s 1110101011101100110100111111111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R6.fna -s 1111110101101011100111011001111 >> test.txt
+
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R7.fna -s 1111011101110010111001011011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R7.fna -s 1111101011100101101110011011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R7.fna -s 1111101001110101101100111011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R7.fna -s 1111010111010011001110111110111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R7.fna -s 1110111011101111010010110011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R7.fna -s 1111101001011100111110101101111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R7.fna -s 1111011110011010111110101011011 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R7.fna -s 1110101011101100110100111111111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R7.fna -s 1111110101101011100111011001111 >> test.txt
+
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R8.fna -s 1111011101110010111001011011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R8.fna -s 1111101011100101101110011011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R8.fna -s 1111101001110101101100111011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R8.fna -s 1111010111010011001110111110111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R8.fna -s 1110111011101111010010110011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R8.fna -s 1111101001011100111110101101111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R8.fna -s 1111011110011010111110101011011 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R8.fna -s 1110101011101100110100111111111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R8.fna -s 1111110101101011100111011001111 >> test.txt
+
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R9.fna -s 1111011101110010111001011011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R9.fna -s 1111101011100101101110011011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R9.fna -s 1111101001110101101100111011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R9.fna -s 1111010111010011001110111110111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R9.fna -s 1110111011101111010010110011111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R9.fna -s 1111101001011100111110101101111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R9.fna -s 1111011110011010111110101011011 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R9.fna -s 1110101011101100110100111111111 >> test.txt
+C:\Users\teosp\source\repos\Project4\Release\Project4.exe -f C:\Users\teosp\OneDrive\Desktop\teouni\Algoritmi_per_la_bioinformatica\dataaset\R9.fna -s 1111110101101011100111011001111 >> test.txt
